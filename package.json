@@ -1,50 +1,27 @@
 {
-  "name": "book_trader",
+  "name": "bt-2",
   "version": "0.1.0",
   "private": true,
-  "author": "Chau Le",
-  "license": "ISC",
   "dependencies": {
-    "@apollo/client": "^3.1.2",
-    "@material-ui/core": "^4.11.2",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
-    "@prisma/client": "^2.4.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "apollo-server": "^2.16.1",
-    "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.5.2",
-    "cross-fetch": "^3.0.5",
-    "dotenv": "^8.2.0",
-    "goodreads": "^0.1.0",
-    "goodreads-api-node": "0.0.12",
-    "graphql": "^15.3.0",
-    "jsonwebtoken": "^8.5.1",
-    "node-fetch": "^2.6.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-infinite-scroller": "^1.2.4",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "xml2js": "^0.4.23"
-  },
-  "devDependencies": {
-    "@prisma/cli": "^2.4.1",
-    "dotenv": "^8.2.0",
-    "nodemon": "^2.0.4",
-    "xml-fetch": "^1.1.91"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "server": "node server/server.js",
-    "client": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
