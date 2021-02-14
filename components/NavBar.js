@@ -1,10 +1,9 @@
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/ToolBar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
-
+import Link from 'next/link'
 
 const NavBar = () => {
     return (
@@ -16,21 +15,24 @@ const NavBar = () => {
                     </Typography>
                     <ul className="inline-list">
                         <li>
-                            <Link to="/">
+                            <Link href="/">
                                 Home
                                 {/* <Button variant="text" size="large" color="primary" href="/"> Home</Button> */}
                             </Link>
 
                         </li>
                         <li>
-                            <Link to="/login">
+                            <Link href="/login">
                                 Login
                             {/* <Button size="large" color="primary" href="/login"> Login</Button> */}
                             </Link>
                         </li>
                         <li>
-                            <Link to="/my/book-shelves">
+                            <Link href="/my/book-shelves">
+                                <a>
+
                                 My shelves
+                                </a>
                                 {/* <Button size="large" color="primary" href="/my/book-shelves"> My Shelves</Button> */}
                             </Link>
                         </li>
