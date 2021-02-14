@@ -3,24 +3,24 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 const BookGrid = () => {
-   return(
+    return (
         <div>
             <Grid container spacing={3} style={{ padding: 24 }}>
                 <Grid item xs={12} sm={3} lg={2} xl={1}>
-                    <BookCard/>
+                    <BookCard />
                 </Grid>
                 <Grid item xs={12} sm={3} lg={2} xl={1}>
-                    <BookCard/>
+                    <BookCard />
                 </Grid>
                 <Grid item xs={12} sm={3} lg={2} xl={1}>
-                    <BookCard/>
+                    <BookCard />
                 </Grid>
                 <Grid item xs={12} sm={3} lg={2} xl={1}>
-                    <BookCard/>
+                    <BookCard />
                 </Grid>
             </Grid>
         </div>
-   )
+    )
 };
 
 
