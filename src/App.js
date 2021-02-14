@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './pages/Home'
@@ -25,11 +24,11 @@ function App() {
 
         </Route>
         <Route path="/">
-
+          <Home />
         </Route>
       </Switch>
     </Router>
-  );
+  )
 }
 
 export default App;
