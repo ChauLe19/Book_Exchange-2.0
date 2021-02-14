@@ -5,3 +5,4 @@ prisma/file.db
 cascading-deletes-demo
 package-lock.json
 .eslintcache
+.next
