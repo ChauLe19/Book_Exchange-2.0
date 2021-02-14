@@ -17,8 +17,8 @@ const BookCard = () => {
         <ThemeProvider theme={theme}>
             <div>
               <Card>
-                <CardMedia style={{height: 0, paddingTop: '56.25%'}}
-                  image= {"https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg"}
+                <CardMedia style={{height: 0, paddingTop: '150%'}}
+                  image={"https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg"}
                   title={"Harry Potter and the Sorcerer's Stone"} />
                 <CardActions>
                   <Button>Button</Button>
