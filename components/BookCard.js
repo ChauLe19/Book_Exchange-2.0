@@ -1,6 +1,7 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button'
-import hp from './img/harrypotter.jpg'
+import Image from 'next/image'
+// import hp from '../public/images/harrypotter.jpg'
 import {Card, CardActions, CardMedia, CardContent} from '@material-ui/core'
 
 const theme = createMuiTheme({      
@@ -17,7 +18,7 @@ const BookCard = () => {
             <div>
               <Card>
                 <CardMedia style={{height: 0, paddingTop: '56.25%'}}
-                  image={hp}
+                  image= {"https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg"}
                   title={"Harry Potter and the Sorcerer's Stone"} />
                 <CardActions>
                   <Button>Button</Button>

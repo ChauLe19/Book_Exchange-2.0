@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 // import SellerBookBox from "../components/SellerBookBox"
-import { Redirect } from "react-router-dom";
 import BookGrid from "../components/BookGrid"
 // import FeedBox from "../components/FeedBox";
 // import InfiniteScroll from "react-infinite-scroller";
