@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import React from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/ToolBar';
 import Typography from '@material-ui/core/Typography';
@@ -8,10 +9,11 @@ import Link from 'next/link'
 
 const NavBar = () => {
     return (
-        <div id="navbar" color="text.primary">
-            <CssBaseline/>
-            <AppBar position="static" >
-                <ToolBar style={{margin: 0}}>
+        // <div id="navbar" color="text.primary">
+        <>
+            {/* <CssBaseline/> */}
+            <AppBar position="static" style={{margin: 0}}>
+                <ToolBar>
                     <Typography variant="h5" color="inherit" style={{ flex: 1 }}>
                         Book Trader
                     </Typography>
@@ -26,7 +28,8 @@ const NavBar = () => {
                     </Link>
                 </ToolBar>
             </AppBar>
-        </div>
+            </>
+        // </div>
     )
 }
 

@@ -1,33 +1,37 @@
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button'
 import Image from 'next/image'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 // import hp from '/harrypotter.jpg'
-import { Card, CardActions, CardMedia, CardContent } from '@material-ui/core'
+import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography } from '@material-ui/core'
 
-const theme = createMuiTheme({
-  typography: {
-    button: {
-      textTransform: 'none'
-    }
-  }
-});
+
 
 const BookCard = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Card>
-          <CardMedia style={{ height: 0, paddingTop: '56.25%' }}
-            image="/images/harrypotter.jpg"
-            title={"Harry Potter and the Sorcerer's Stone"} />
-          <CardActions>
-            <Button>Button</Button>
-            
-          </CardActions>
-        </Card>
-      </div>
-    </ThemeProvider>
+
+    <Card>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="Harry Potter"
+          height="140"
+          image="/images/harrypotter.jpg"
+          title={"Harry Potter and the Sorcerer's Stone"} />
+        <CardContent>
+          <Typography variant="h6" align="center" color="inherit">
+            Harry Potter and the Sorcerer's Stone
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button>More Info</Button>
+        <Button>
+          <FavoriteBorderIcon />
+        </Button>
+      </CardActions>
+
+    </Card>
 
   )
 }

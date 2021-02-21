@@ -6,3 +6,4 @@ cascading-deletes-demo
 package-lock.json
 .eslintcache
 .next
+.env
