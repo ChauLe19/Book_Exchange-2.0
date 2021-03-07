@@ -40,16 +40,16 @@ const BookGrid = () => {
                 </TextField>
             </div>
             <Grid container spacing={3} style={{ padding: 20 }}>
-                <Grid item xs={12} sm={3} lg={2} xl={1}>
+                <Grid item xs={12} sm={3} lg={2} xl={2}>
                     <BookCard />
                 </Grid>
-                <Grid item xs={12} sm={3} lg={2} xl={1}>
+                <Grid item xs={12} sm={3} lg={2} xl={2}>
                     <BookCard />
                 </Grid>
-                <Grid item xs={12} sm={3} lg={2} xl={1}>
+                <Grid item xs={12} sm={3} lg={2} xl={2}>
                     <BookCard />
                 </Grid>
-                <Grid item xs={12} sm={3} lg={2} xl={1}>
+                <Grid item xs={12} sm={3} lg={2} xl={2}>
                     <BookCard />
                 </Grid>
             </Grid>

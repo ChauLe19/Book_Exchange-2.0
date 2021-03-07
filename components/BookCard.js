@@ -1,9 +1,9 @@
 import Button from '@material-ui/core/Button'
-import Image from 'next/image'
+
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 // import hp from '/harrypotter.jpg'
-import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography } from '@material-ui/core'
+import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography, IconButton } from '@material-ui/core'
 
 
 
@@ -24,11 +24,14 @@ const BookCard = () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button>More Info</Button>
-        <Button>
-          <FavoriteBorderIcon />
-        </Button>
+      <CardActions style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}>
+          <Button>More Info</Button>
+          <IconButton>
+            <FavoriteBorderIcon />
+          </IconButton>
       </CardActions>
 
     </Card>
