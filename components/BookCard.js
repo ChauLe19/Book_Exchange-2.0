@@ -1,13 +1,20 @@
 import Button from '@material-ui/core/Button'
-import Image from 'next/image'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import clsx from 'clsx';
 
-// import hp from '/harrypotter.jpg'
-import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
 
+import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography, IconButton } from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+  right: {
+    marginRight: "0px",
+  },
+}));
 
 
 const BookCard = () => {
+  const classes = useStyles();
   return (
 
     <Card>
@@ -26,9 +33,9 @@ const BookCard = () => {
       </CardActionArea>
       <CardActions>
         <Button>More Info</Button>
-        <Button>
+        <IconButton className={clsx(classes.left)}>
           <FavoriteBorderIcon />
-        </Button>
+        </IconButton>
       </CardActions>
 
     </Card>
