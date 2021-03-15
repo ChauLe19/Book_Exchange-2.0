@@ -38,13 +38,21 @@ const BookCard = () => {
           justifyContent: 'space-between',
         }}>
           <Button>More Info</Button>
-          <IconButton onClick={()=>{alert('clicked')}}>
+          <IconButton onClick={()=>{writeUserData()}}>
             <FavoriteBorderIcon />
           </IconButton>
       </CardActions>
     </Card>
 
   )
+}
+
+function writeUserData() {
+    database.ref('users/' + 1).set({
+    username: "Ha Lo",
+    email: "halo@gmail.com",
+    profile_picture : "www.google.com/images"
+  });
 }
 
 export default BookCard

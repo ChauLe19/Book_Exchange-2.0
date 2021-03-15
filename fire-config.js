@@ -1,17 +1,22 @@
 import firebase from 'firebase'
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
 const firebaseConfig = {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DB_URL,
-    projectId: process.env.PROJ_ID,
-    storageBucket: process.env.BUCKET,
-    messagingSenderId: process.env.SENDER_ID,
-    appId: process.env.APP_ID
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+    databaseURL: process.env.NEXT_PUBLIC_DB_URL,
+    projectId: process.env.NEXT_PUBLIC_PROJ_ID,
+    storageBucket: process.env.NEXT_PUBLIC_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_APP_ID
 };
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
 
 // Get a reference to the database service
 var database = firebase.database();
