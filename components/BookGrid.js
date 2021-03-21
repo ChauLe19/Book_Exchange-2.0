@@ -66,17 +66,13 @@ const BookGrid = () => {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    square="true"
+                    square
                     styles={{display: "flex"}}
                 >   
                     <Typography variant="h5" align="center">
                         Bunch of Harry Potter 
                     </Typography>
                     
-                    </AccordionSummary>
-                <AccordionDetails>
-
-                    {/* <Card> */}
                     <Grid container spacing={3} style={{ padding: 20 }}>
                         <Grid item xs={12} sm={3} lg={2} xl={2}>
                             <BookCard />
@@ -90,9 +86,10 @@ const BookGrid = () => {
                         <Grid item xs={12} sm={3} lg={2} xl={2}>
                             <BookCard />
                         </Grid>
-                    {/* </Grid> */}
-                
-                    {/* <Grid container spacing={3} style={{ padding: 20 }}> */}
+                    </Grid>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Grid container spacing={3} style={{ padding: 20 }}>
                         <Grid item xs={12} sm={3} lg={2} xl={2}>
                             <BookCard />
                         </Grid>
