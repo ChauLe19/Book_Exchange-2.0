@@ -2,8 +2,30 @@ import BookCard from "../components/BookCard";
 import React from "react";
 import { Grid, MenuItem, Collapse, CardContent, Typography, Card } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MuiAccordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Divider from '@material-ui/core/Divider';
+
+import { withStyles } from "@material-ui/core/styles"
+
+const Accordion = withStyles({
+    root: {
+      border: '1px solid rgba(0, 0, 0, .125)',
+      boxShadow: 'none',
+      '&:not(:last-child)': {
+        borderBottom: 0,
+      },
+      '&:before': {
+        display: 'none',
+      },
+      '&$expanded': {
+        margin: 'auto',
+      },
+    },
+    expanded: {},
+  })(MuiAccordion);
 
 const searchFields = [
     {
@@ -24,33 +46,7 @@ const searchFields = [
     },
 ];
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        maxWidth: 345,
-    },
-    media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-}));
-
 const BookGrid = () => {
-
-    const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
     return (
         <>
             <div style={{ padding: 20 }}>
@@ -65,43 +61,54 @@ const BookGrid = () => {
                     ))}
                 </TextField>
             </div>
-            <Typography>
-                Bunch of Harry Potter
-            </Typography>
-            <Card>
-                <Grid container spacing={3} style={{ padding: 20 }}>
-                    <Grid item xs={12} sm={3} lg={2} xl={2}>
-                        <BookCard />
-                    </Grid>
-                    <Grid item xs={12} sm={3} lg={2} xl={2}>
-                        <BookCard />
-                    </Grid>
-                    <Grid item xs={12} sm={3} lg={2} xl={2}>
-                        <BookCard />
-                    </Grid>
-                    <Grid item xs={12} sm={3} lg={2} xl={2}>
-                        <BookCard />
-                    </Grid>
-                    <ExpandMoreIcon onClick={handleExpandClick} />
+            <Accordion >
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    square="true"
+                    styles={{display: "flex"}}
+                >   
+                    <Typography variant="h5" align="center">
+                        Bunch of Harry Potter 
+                    </Typography>
                     
-                </Grid>
-            </Card>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <Grid container spacing={3} style={{ padding: 20 }}>
-                            <Grid item xs={12} sm={3} lg={2} xl={2}>
-                                <BookCard />
-                            </Grid>
-                            <Grid item xs={12} sm={3} lg={2} xl={2}>
-                                <BookCard />
-                            </Grid>
-                            <Grid item xs={12} sm={3} lg={2} xl={2}>
-                                <BookCard />
-                            </Grid>
-                            <Grid item xs={12} sm={3} lg={2} xl={2}>
-                                <BookCard />
-                            </Grid>
+                    </AccordionSummary>
+                <AccordionDetails>
+
+                    {/* <Card> */}
+                    <Grid container spacing={3} style={{ padding: 20 }}>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
                         </Grid>
-                    </Collapse>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                    {/* </Grid> */}
+                
+                    {/* <Grid container spacing={3} style={{ padding: 20 }}> */}
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                        <Grid item xs={12} sm={3} lg={2} xl={2}>
+                            <BookCard />
+                        </Grid>
+                    </Grid>
+                    {/* </Collapse> */}
+                </AccordionDetails>
+            </Accordion>
         </>
     )
 };
