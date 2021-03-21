@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 // import SellerBookBox from "../components/SellerBookBox"
 import BookGrid from "../components/BookGrid"
+import BookScroller from "../components/BookScroller";
 // import FeedBox from "../components/FeedBox";
 // import InfiniteScroll from "react-infinite-scroller";
 // import SellPage from "./SellPage"
@@ -144,6 +145,7 @@ function Home(props) {
                 )}
             </InfiniteScroll>
             {!data.feed.isNotEmpty && <p>This is the end</p>} */}
+            {/* <BookScroller/> */}
         </Fragment>
     );
 }

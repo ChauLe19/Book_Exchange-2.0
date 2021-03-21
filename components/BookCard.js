@@ -31,11 +31,14 @@ const BookCard = () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button>More Info</Button>
-        <IconButton className={clsx(classes.left)}>
-          <FavoriteBorderIcon />
-        </IconButton>
+      <CardActions style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}>
+          <Button>More Info</Button>
+          <IconButton>
+            <FavoriteBorderIcon />
+          </IconButton>
       </CardActions>
 
     </Card>
