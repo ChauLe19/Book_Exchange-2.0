@@ -11,7 +11,7 @@ import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography, 
 const useStyles = makeStyles((theme) => ({
   right: {
     marginRight: "0px",
-  },
+  }
 }));
 
 const StyledRating = withStyles({
@@ -23,7 +23,7 @@ const StyledRating = withStyles({
   },
 })(Rating);
 
-const BookCard = () => {
+const BookCard = (props) => {
   const classes = useStyles();
   return (
 
@@ -31,13 +31,17 @@ const BookCard = () => {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Harry Potter"
-          height="140"
-          image="/images/harrypotter.jpg"
-          title={"Harry Potter and the Sorcerer's Stone"} />
+          // alt="Harry Potter"
+          alt = {props.title}
+          height= {100}
+          image= {props.imageURL}
+          // image="/images/harrypotter.jpg"
+          // title={"Harry Potter and the Sorcerer's Stone"} />
+          title={props.title} />
         <CardContent>
-          <Typography variant="h6" align="center" color="inherit">
-            Harry Potter and the Sorcerer's Stone
+          <Typography variant="body1" align="center" color="inherit">
+            {/* Harry Potter and the Sorcerer's Stone */}
+            {props.title}
           </Typography>
         </CardContent>
       </CardActionArea>
