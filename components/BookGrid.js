@@ -27,6 +27,22 @@ const list = [
         title: "HP-PS",
         imageURL: "/images/HP_philosopherStone.jpg"
     },
+    {
+        title: "HP prisoner of Azkaban",
+        imageURL: "/images/HP_prisonerOfAzkaban.jpg"
+    },
+    {
+        title: "Harry Potter and the Sorcerer's Stone",
+        imageURL: "/images/harrypotter.jpg"
+    },
+    {
+        title: "HP-chamber",
+        imageURL: "/images/HP_chamberOfSecrets.jpeg"
+    },
+    {
+        title: "HP and cursed child",
+        imageURL: "/images/HP_cursedChild.jpg"
+    },
 ];
 const Accordion = withStyles({
     root: {
@@ -41,6 +57,7 @@ const Accordion = withStyles({
         '&$expanded': {
             margin: 'auto',
         },
+
     },
     expanded: {},
 })(MuiAccordion);
@@ -70,7 +87,7 @@ const BookGrid = () => {
             <div style={{ padding: 20 }}>
 
                 <TextField id="search-value" variant="outlined" label="Search for a Book" style={{ marginRight: 5 }} />
-                <TextField select id="search-option" select="true" value="intitle" variant="outlined">
+                <TextField select id="search-option"  value="intitle" variant="outlined">
 
                     {searchFields.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -79,40 +96,37 @@ const BookGrid = () => {
                     ))}
                 </TextField>
             </div>
-            <Accordion >
+            <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    square
-                    styles={{ display: "flex" }}
+                    square = "true"
+                    style={{ display: "flex" }}
                 >
-                    <Typography variant="h5" align="center">
-                        Bunch of Harry Potter
+                    <div style={{width:"100%"}}>
+
+                        <Typography variant="h5" align="center">
+                            Bunch of Harry Potter
                     </Typography>
 
-                    <Grid container spacing={3} style={{ padding: 20 }}>
-                        {list.map(bookCard => (
-                        <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard imageURL={bookCard.imageURL} title={bookCard.title} />
+
+                        <Grid container spacing={3} style={{ padding: 20 }}>
+                            {list.slice(0, 4).map(bookCard => (
+                                <Grid item xs={12} sm={3} lg={2} xl={2} key={bookCard.title}>
+                                    <BookCard imageURL={bookCard.imageURL} title={bookCard.title} />
+                                </Grid>
+                            ))}
                         </Grid>
-                        ))}
-                    </Grid>
+                    </div>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Grid container spacing={3} style={{ padding: 20 }}>
-                        <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard />
-                        </Grid>
-                        <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard />
-                        </Grid>
-                        <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard />
-                        </Grid>
-                        <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard />
-                        </Grid>
+                        {list.slice(4, 8).map(bookCard => (
+                            <Grid item xs={12} sm={3} lg={2} xl={2} key={bookCard.title}>
+                                <BookCard imageURL={bookCard.imageURL} title={bookCard.title} />
+                            </Grid>
+                        ))}
                     </Grid>
                     {/* </Collapse> */}
                 </AccordionDetails>
