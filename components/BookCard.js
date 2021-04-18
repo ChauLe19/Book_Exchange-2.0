@@ -4,7 +4,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import clsx from 'clsx';
 import Rating from '@material-ui/lab/Rating'
 import FavoriteIcon from '@material-ui/icons/Favorite'
-import { withStyles,makeStyles } from '@material-ui/core/styles'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
 
 import { Card, CardActions, CardMedia, CardContent, CardActionArea, Typography, IconButton } from '@material-ui/core'
 
@@ -27,16 +27,17 @@ const BookCard = (props) => {
   const classes = useStyles();
   return (
 
-    <Card>
+    <Card className={classes.h} style={{height:"100%"}}>
       <CardActionArea>
+
         <CardMedia
           component="img"
           // alt="Harry Potter"
-          alt = {props.title}
-          height= {100}
-          image= {props.imageURL}
+          alt={props.title}
+          height={100}
+          image={props.imageURL}
           // image="/images/harrypotter.jpg"
-          // title={"Harry Potter and the Sorcerer's Stone"} />
+          // title={"Harry Potter and the Sorcerer's Stone"} 
           title={props.title} />
         <CardContent>
           <Typography variant="body1" align="center" color="inherit">
@@ -46,14 +47,15 @@ const BookCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}>
-          <Button>More Info</Button>
-          <StyledRating 
+        display: 'flex',
+        justifyContent: 'space-between',
+      }}>
+        <Button>More Info</Button>
+        <StyledRating
           defaultValue={0}
           max={1}
           IconContainerComponent={FavoriteIcon}
+          readOnly={true}
         />
       </CardActions>
     </Card>
