@@ -115,7 +115,7 @@ const BookGrid = ({data}) => {
                     </Typography>
 
                     <Grid container spacing={3} style={{ padding: 20 }}>
-                        {data.slice(0,4).map((item) => (
+                        {data.slice(0,4).map(item => (
                         <Grid item xs={12} sm={3} lg={2} xl={2}>
                             <BookCard imageURL={item.volumeInfo.imageLinks.thumbnail == null ? "https://designshack.net/wp-content/uploads/placeholder-image.png" : item.volumeInfo.imageLinks.thumbnail } title={item.volumeInfo.title} />
                         </Grid>
@@ -133,7 +133,7 @@ const BookGrid = ({data}) => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Grid container spacing={3} style={{ padding: 20 }}>
-                        {data.slice(4, 8).map(bookCard => (
+                        {data.slice(4, 8).map(item => (
                             <Grid item xs={12} sm={3} lg={2} xl={2}>
                                 <BookCard imageURL={item.volumeInfo.imageLinks.thumbnail == null ? "https://designshack.net/wp-content/uploads/placeholder-image.png" : item.volumeInfo.imageLinks.thumbnail } title={item.volumeInfo.title} />
                             </Grid>
