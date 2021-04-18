@@ -128,7 +128,7 @@ function Home(props) {
         // </Fragment>
         <Fragment>
             {/* <div>This is home</div> */}
-            <BookGrid />
+            <BookGrid data={props.items} />
             {/* <SellPage /> */}
             {/* <InfiniteScroll
                 loadMore={handleLoadMore}
@@ -148,6 +148,40 @@ function Home(props) {
             {/* <BookScroller/> */}
         </Fragment>
     );
+}
+
+export async function getStaticProps() {
+    // Get external data from the file system, API, DB, etc.
+    const res = await fetch("https://www.googleapis.com/books/v1/volumes?q=harry+potter")
+    // const list = [
+    //     {
+    //         title: "Harry Potter and the Sorcerer's Stone",
+    //         imageURL: "/images/harrypotter.jpg"
+    //     },
+    //     {
+    //         title: "HP-chamber",
+    //         imageURL: "/images/HP_chamberOfSecrets.jpeg"
+    //     },
+    //     {
+    //         title: "HP and cursed child",
+    //         imageURL: "/images/HP_cursedChild.jpg"
+    //     },
+    //     {
+    //         title: "HP-PS",
+    //         imageURL: "/images/HP_philosopherStone.jpg"
+    //     },
+    // ];
+    const data = await res.json()
+    const items = data.items
+
+    if (!data) {
+        return {
+            notFound: true,
+        }
+    }
+    return {
+        props: { items },
+    }
 }
 
 export default Home;

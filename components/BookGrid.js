@@ -7,27 +7,12 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Divider from '@material-ui/core/Divider';
+import Axios from "axios";
+// import fetch from 'node-fetch';
 
 import { withStyles } from "@material-ui/core/styles"
 
-const list = [
-    {
-        title: "Harry Potter and the Sorcerer's Stone",
-        imageURL: "/images/harrypotter.jpg"
-    },
-    {
-        title: "HP-chamber",
-        imageURL: "/images/HP_chamberOfSecrets.jpeg"
-    },
-    {
-        title: "HP and cursed child",
-        imageURL: "/images/HP_cursedChild.jpg"
-    },
-    {
-        title: "HP-PS",
-        imageURL: "/images/HP_philosopherStone.jpg"
-    },
-];
+
 const Accordion = withStyles({
     root: {
         border: '1px solid rgba(0, 0, 0, .125)',
@@ -64,7 +49,9 @@ const searchFields = [
     },
 ];
 
-const BookGrid = () => {
+
+
+const BookGrid = ({data}) => {
     return (
         <>
             <div style={{ padding: 20 }}>
@@ -92,11 +79,11 @@ const BookGrid = () => {
                     </Typography>
 
                     <Grid container spacing={3} style={{ padding: 20 }}>
-                        {list.map(bookCard => (
+                        {data.map((item) => (
                         <Grid item xs={12} sm={3} lg={2} xl={2}>
-                            <BookCard imageURL={bookCard.imageURL} title={bookCard.title} />
+                            <BookCard imageURL={item.volumeInfo.imageLinks.thumbnail == null ? "https://designshack.net/wp-content/uploads/placeholder-image.png" : item.volumeInfo.imageLinks.thumbnail } title={item.volumeInfo.title} />
                         </Grid>
-                        ))}
+                    ))}
                     </Grid>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -120,6 +107,9 @@ const BookGrid = () => {
         </>
     )
 };
-
-
 export default BookGrid
+
+
+  
+
+
