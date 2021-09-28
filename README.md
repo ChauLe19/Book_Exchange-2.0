@@ -1,3 +1,8 @@
+NOTE: This project is pending due to the retirement of Goodreads API.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
