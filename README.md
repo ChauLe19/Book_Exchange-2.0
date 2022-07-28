@@ -1,4 +1,4 @@
-NOTE: This project is pending due to the retirement of Goodreads API.
+NOTE: This project is pending due to the retirement of Goodreads API. It was first using Google Books API, but uhhhhhhh it's not really a good source for out purposes
 
 
 
